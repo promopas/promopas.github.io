@@ -1,16 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <title>PAS PROMO APP</title>
-
-  <!-- Favicon PAS: pastikan favicon.png tersedia di repository -->
   <link rel="icon" type="image/png" href="logopas.png">
   <link rel="apple-touch-icon" href="logopas.png">
-
+  <title>PAS PROMO APP</title>
   <style>
     * {
       box-sizing: border-box;
@@ -22,7 +18,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background: #fff;
+      background: #f8fafc;
       font-family: Arial, sans-serif;
     }
 
@@ -35,53 +31,58 @@
       background: #fff;
     }
 
-    #loading {
+    #fallback {
+      display: none;
       position: fixed;
       inset: 0;
-      display: flex;
+      z-index: 2;
+      background: #fff;
       align-items: center;
       justify-content: center;
-      background: #fff;
+      padding: 24px;
+      text-align: center;
+    }
+
+    #fallback.show {
+      display: flex;
+    }
+
+    .message {
+      max-width: 420px;
+      line-height: 1.7;
       color: #475569;
-      font-size: 14px;
+    }
+
+    .message a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <div id="loading">Membuka PAS PROMO APP...</div>
-
   <iframe
     id="app"
-    title="PAS PROMO APP"
-    hidden
+    title="PAS Web Application"
+    src="https://script.google.com/macros/s/AKfycbwTIq_UoOsx3Z6VFxO--iUcdqW0qU6FStptwa2sXTBxbJ_kZBXeA5Cb0MgID9gusU_8Hg/exec"
     allow="clipboard-read; clipboard-write"
     allowfullscreen
   ></iframe>
 
-  <script>
-    (() => {
-      "use strict";
-
-      const APP_URL =
-        "https://script.google.com/macros/s/AKfycbwTIq_UoOsx3Z6VFxO--iUcdqW0qU6FStptwa2sXTBxbJ_kZBXeA5Cb0MgID9gusU_8Hg/exec";
-
-      const isMobile =
-        /Android|iPhone|iPad|iPod|IEMobile|Opera Mini/i
-          .test(navigator.userAgent);
-
-      if (isMobile) {
-        // HP: buka Apps Script langsung, bukan di dalam iframe.
-        window.location.replace(APP_URL);
-      } else {
-        // PC: pertahankan tampilan di GitHub Pages.
-        const frame = document.getElementById("app");
-        frame.src = APP_URL;
-        frame.hidden = false;
-        document.getElementById("loading").remove();
-      }
-    })();
-  </script>
-
+  <div id="fallback">
+    <div class="message">
+      <strong>Aplikasi tidak dapat ditampilkan di dalam halaman ini.</strong>
+      <p>Google Apps Script mungkin membatasi tampilan melalui iframe.</p>
+      <a
+        href="https://script.google.com/macros/s/AKfycbwTIq_UoOsx3Z6VFxO--iUcdqW0qU6FStptwa2sXTBxbJ_kZBXeA5Cb0MgID9gusU_8Hg/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Buka Aplikasi</a>
+    </div>
+  </div>
 </body>
 </html>
