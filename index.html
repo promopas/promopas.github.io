@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>PAS Web Application</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #f8fafc;
+      font-family: Arial, sans-serif;
+    }
+
+    #app {
+      display: block;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      border: 0;
+      background: #fff;
+    }
+
+    #fallback {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2;
+      background: #fff;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      text-align: center;
+    }
+
+    #fallback.show {
+      display: flex;
+    }
+
+    .message {
+      max-width: 420px;
+      line-height: 1.7;
+      color: #475569;
+    }
+
+    .message a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="app"
+    title="PAS Web Application"
+    src="https://script.google.com/macros/s/AKfycbx6qQFW223QgiLebEtgij424o1VCdiE1Eo8V7gHRdvebwhSZcrBktl2xx1-0UzGmjZb4w/exec"
+    allow="clipboard-read; clipboard-write"
+    allowfullscreen
+  ></iframe>
+
+  <div id="fallback">
+    <div class="message">
+      <strong>Aplikasi tidak dapat ditampilkan di dalam halaman ini.</strong>
+      <p>Google Apps Script mungkin membatasi tampilan melalui iframe.</p>
+      <a
+        href="https://script.google.com/macros/s/AKfycbx6qQFW223QgiLebEtgij424o1VCdiE1Eo8V7gHRdvebwhSZcrBktl2xx1-0UzGmjZb4w/exec"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Buka Aplikasi</a>
+    </div>
+  </div>
+</body>
+</html>
